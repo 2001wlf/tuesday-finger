@@ -36,6 +36,12 @@
     <ClInclude Include="CZKFPEngX.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="TextSpeaker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ComAutoInit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Finger.cpp">

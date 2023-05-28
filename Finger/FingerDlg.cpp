@@ -7,7 +7,10 @@
 #include "Finger.h"
 #include "FingerDlg.h"
 #include "afxdialogex.h"
-
+#include "ComAutoInit.h"
+#include "TextSpeaker.h"
+#pragma warning(disable : 4996)
+gds::CTextSpeaker m_TextSpeak;
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -193,10 +196,12 @@ void CFingerDlg::OnBnClickedBtnConnect()
 	// TODO: 在此添加控件通知处理程序代码
 	int nn = m_zkfpEng.InitEngine();
 	if (nn != 0) {
+		m_TextSpeak.Speak(_T("采集器无法连接成功"));
 		MessageBox(_T("采集器无法连接成功"), _T("提示"));
 	}
 	else 
 	{
+		m_TextSpeak.Speak(_T("采集器连接成功"));
 		MessageBox(_T("采集器连接成功"), _T("提示"));
 	}
 	
@@ -246,6 +251,8 @@ void CFingerDlg::OnBnClickedBtnDisconnect()
 {
 	// TODO: 在此添加控件通知处理程序代码
 	m_zkfpEng.EndEngine();
+	m_TextSpeak.Speak(_T("采集器已断开连接"));
+	MessageBox(_T("采集已断开连接"), _T("提示"));
 }
 
 
@@ -259,6 +266,8 @@ void CFingerDlg::OnBnClickedBtnCapture()
 {
 	// TODO: 在此添加控件通知处理程序代码
 	m_zkfpEng.SaveBitmap(_T("capt.bmp"));
+	m_TextSpeak.Speak(_T("采集成功"));
+	MessageBox(_T("采集成功"), _T("提示"));
 }
 
 void CFingerDlg::OnBnClickedBtnStep1()
@@ -4238,6 +4247,8 @@ void CFingerDlg::OnBnClickedBtnRegister()
 	//显示图像
 	ShowImageInCtrl(m_picCtrl1, srcImgFile);//显示原始指纹图像
 	ShowImageInCtrl(m_picCtrl2, outImgFile);//显示指纹特征图像
+	m_TextSpeak.Speak(_T("登记成功"));
+	MessageBox(_T("登记成功"), _T("提示"));
 }
 
 void CFingerDlg::OnBnClickedBtnAddImage2()
@@ -4550,7 +4561,8 @@ void CFingerDlg::OnBnClickedBtnIdentify()
 
 	//显示图像
 	ShowImageInCtrl(m_picCtrl1, srcImgFile);//显示原始指纹图像
-	ShowImageInCtrl(m_picCtrl2, outImgFile);//显示识别结果图像	
+	ShowImageInCtrl(m_picCtrl2, outImgFile);//显示识别结果图像
+	m_TextSpeak.Speak(_T("识别结果如左所示"));
 }
 
 
