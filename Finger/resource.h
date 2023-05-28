@@ -5,7 +5,7 @@
 #define IDC_BTN_DATABASE                3
 #define IDD_FINGER_DIALOG               102
 #define IDR_MAINFRAME                   128
-#define IDB_BITMAP123                   136
+#define IDB_BITMAP1112123               139
 #define IDC_BTN_STEP_1                  1001
 #define IDC_BTN_EXIT                    1002
 #define IDC_STATIC_INFO                 1003
@@ -44,7 +44,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        137
+#define _APS_NEXT_RESOURCE_VALUE        140
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1034
 #define _APS_NEXT_SYMED_VALUE           101

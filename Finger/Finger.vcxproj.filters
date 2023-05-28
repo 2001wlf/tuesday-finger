@@ -83,5 +83,14 @@
     <Image Include="..\..\..\..\..\Pictures\Camera Roll\test2.bmp">
       <Filter>资源文件</Filter>
     </Image>
+    <Image Include="..\..\..\..\1bd6-isehnni2704057.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\..\..\1bd6-isehnni2704057 (1).bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Pictures\Camera Roll\1bd6-isehnni2704057.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

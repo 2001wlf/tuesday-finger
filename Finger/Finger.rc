@@ -232,9 +232,11 @@ END
 // Bitmap
 //
 
-IDC_BTN_CONNECT         BITMAP                  "C:\\Users\\Dragonw\\Pictures\\Camera Roll\\test.bmp"
+IDC_BTN_DATABASE        BITMAP                  "C:\\Users\\Dragonw\\Pictures\\Camera Roll\\test.bmp"
 
 IDC_BTN_ADD_IMAGE2      BITMAP                  "C:\\Users\\Dragonw\\Pictures\\Camera Roll\\test2.bmp"
+
+ID_WINDOW_TILE_VERT     BITMAP                  "C:\\Users\\Dragonw\\Pictures\\Camera Roll\\1bd6-isehnni2704057.bmp"
 
 #endif    // 中文(简体，中国) resources
 /////////////////////////////////////////////////////////////////////////////

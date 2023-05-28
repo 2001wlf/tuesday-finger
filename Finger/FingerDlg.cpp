@@ -155,7 +155,7 @@ void CFingerDlg::OnPaint()
 		CDC   dcMem;
 		dcMem.CreateCompatibleDC(&dc);
 		CBitmap   bmpBackground;
-		bmpBackground.LoadBitmap(IDC_BTN_ADD_IMAGE2);  //对话框的背景图片  
+		bmpBackground.LoadBitmap(ID_WINDOW_TILE_VERT);  //对话框的背景图片  
 
 		BITMAP   bitmap;
 		bmpBackground.GetBitmap(&bitmap);
@@ -187,6 +187,8 @@ void CFingerDlg::OnEnChangeEdit1()
 void CFingerDlg::OnBnClickedBtnExit()
 {
 	// TODO: 在此添加控件通知处理程序代码
+	m_zkfpEng.EndEngine();
+	m_TextSpeak.Speak(_T("感谢您的使用"));
 	OnOK();
 }
 
@@ -465,7 +467,31 @@ void GetDatabaseInfo(char* info)
 		fscanf(index, "%d  %s  %s  %s\n", &pNo, srcFile, mdlFile, name);
 	}
 	fclose(index);
+	if (pNo)
+	{
+		switch (pNo)
+		{
+		case 1:m_TextSpeak.Speak(_T("当前指纹库中有1条记录")); break;
+		case 2:m_TextSpeak.Speak(_T("当前指纹库中有2条记录")); break;
+		case 3:m_TextSpeak.Speak(_T("当前指纹库中有3条记录")); break;
+		case 4:m_TextSpeak.Speak(_T("当前指纹库中有4条记录")); break;
+		case 5:m_TextSpeak.Speak(_T("当前指纹库中有5条记录")); break;
+		case 6:m_TextSpeak.Speak(_T("当前指纹库中有6条记录")); break;
+		case 7:m_TextSpeak.Speak(_T("当前指纹库中有7条记录")); break;
+		case 8:m_TextSpeak.Speak(_T("当前指纹库中有8条记录")); break;
+		case 9:m_TextSpeak.Speak(_T("当前指纹库中有9条记录")); break;
+		case 10:m_TextSpeak.Speak(_T("当前指纹库中有10条记录")); break;
+		case 11:m_TextSpeak.Speak(_T("当前指纹库中有11条记录")); break;
+		case 12:m_TextSpeak.Speak(_T("当前指纹库中有12条记录")); break;
 
+		default:
+			m_TextSpeak.Speak(_T("当前指纹库中记录过多")); break;
+		}
+	}
+	else
+	{
+		m_TextSpeak.Speak(_T("当前指纹库中没有记录"));
+	}
 	sprintf(info, "当前指纹库中共有 %d 条记录", pNo);
 }
 
